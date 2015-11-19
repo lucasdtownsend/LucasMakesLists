@@ -1,0 +1,217 @@
+﻿<Page
+    x:Class="LucasMakesList.SubPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LucasMakesList"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Storyboard x:Name="OpenDialog">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Projection).(PlaneProjection.RotationX)" Storyboard.TargetName="newItemDialog">
+                <EasingDoubleKeyFrame KeyTime="0" Value="90"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <CircleEase EasingMode="EaseOut"/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.5"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="TransitionIn">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="animationGrid">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="800"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="animationGrid">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="TransitionOut">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="animationGrid">
+        		<SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="800">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseIn"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="animationGrid">
+        		<SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseIn"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        
+        <local:ItemCountToEmptyStateVisibilityConverter x:Key="EmptyStateVisibility" />
+        <local:ItemCountToListVisibilityConverter x:Key="ListVisibility" />
+        <Storyboard x:Name="OpenPane">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="detailsbackground">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.5">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="grid">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="600"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseOut"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="detailsPane">
+        		<DiscreteObjectKeyFrame KeyTime="0">
+        			<DiscreteObjectKeyFrame.Value>
+        				<Visibility>Visible</Visibility>
+        			</DiscreteObjectKeyFrame.Value>
+        		</DiscreteObjectKeyFrame>
+        	</ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="ClosePane">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="detailsbackground">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0.5"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseIn"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="grid">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="600">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseIn"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0">
+        			<EasingDoubleKeyFrame.EasingFunction>
+        				<CircleEase EasingMode="EaseIn"/>
+        			</EasingDoubleKeyFrame.EasingFunction>
+        		</EasingDoubleKeyFrame>
+        	</DoubleAnimationUsingKeyFrames>
+        	<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="detailsPane">
+        		<DiscreteObjectKeyFrame KeyTime="0:0:0.4">
+        			<DiscreteObjectKeyFrame.Value>
+        				<Visibility>Collapsed</Visibility>
+        			</DiscreteObjectKeyFrame.Value>
+        		</DiscreteObjectKeyFrame>
+        	</ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+
+    <Grid Background="Black">
+        <Grid x:Name="animationGrid" RenderTransformOrigin="0.5,0.5">
+        	<Grid.RenderTransform>
+        		<CompositeTransform/>
+        	</Grid.RenderTransform>
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid x:Name="Header" Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="DodgerBlue">
+                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="0.3">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStopCollection>
+                                    <GradientStop Offset="0" Color="White"/>
+                                    <GradientStop Offset="1" Color="Black"/>
+                                </GradientStopCollection>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                    <Button Content="&#xE0D5;" HorizontalAlignment="Left" Style="{StaticResource BackButtonStyle}" VerticalAlignment="Stretch" Width="100" Click="BackButton_Click"/>
+                    <TextBlock Text="{Binding Title}" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="52" Margin="110,0" TextTrimming="CharacterEllipsis" />
+                    <Button x:Name="btnDelete" Content="" HorizontalAlignment="Right" Style="{StaticResource BackButtonStyle}" VerticalAlignment="Stretch" Width="100" Visibility="Collapsed" Click="btnDelete_Click" />
+                </Grid>
+                <Grid x:Name="Body" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid.Background>
+                        <ImageBrush AlignmentX="Center" AlignmentY="Center" Stretch="UniformToFill" ImageSource="Backgrounds/bg5.jpg" />
+                    </Grid.Background>
+                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#deef" />
+                    <Border HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="10">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStopCollection>
+                                    <GradientStop Offset="0" Color="#44000000"/>
+                                    <GradientStop Offset="1" Color="#00000000"/>
+                                </GradientStopCollection>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+
+                    <TextBlock x:Name="emptyState" Visibility="{Binding ItemCount, Converter={StaticResource EmptyStateVisibility}}" Text="Tap the + button to start your list   :)" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="48" Width="500" Opacity="0.5" TextWrapping="WrapWholeWords" TextAlignment="Center" Margin="0,-50,0,0" />
+
+                    <ListView x:Name="listView" ItemsSource="{Binding Items}" Visibility="{Binding ItemCount, Converter={StaticResource ListVisibility}}" CanReorderItems="True" SelectionMode="Single" AllowDrop="True" IsItemClickEnabled="True" SelectionChanged="listView_SelectionChanged" ItemClick="ListView_ItemClick">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding Title}" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="45" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    
+                    <Button Content="&#xE109;" FontSize="52" HorizontalAlignment="Right" Margin="25" Style="{StaticResource AddButtonStyle}" VerticalAlignment="Bottom" Click="Button_Click" />
+                </Grid>
+            </Grid>
+
+
+            <!-- New Item Dialog -->
+            <Grid x:Name="dialogContainer" Visibility="Collapsed">
+                <Border x:Name="border" Background="Black" Opacity="0.5" IsHitTestVisible="True" />
+                <local:NewItemDialog x:Name="newItemDialog" HorizontalAlignment="Center" VerticalAlignment="Top" OKPressed="newItemDialog_OKPressed" CancelPressed="newItemDialog_CancelPressed">
+                    <local:NewItemDialog.Projection>
+                        <PlaneProjection/>
+                    </local:NewItemDialog.Projection>
+                </local:NewItemDialog>
+            </Grid>
+            
+            <Grid x:Name="detailsPane" Visibility="Collapsed">
+                <Border x:Name="detailsbackground" Background="Black" Opacity="0.5" IsHitTestVisible="True" />
+                <Button x:Name="btnCloseDetailsPane" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Opacity="0" IsHitTestVisible="True" Click="btnCloseDetailsPane_Click" />
+                <Grid x:Name="grid" Width="600" HorizontalAlignment="Right" VerticalAlignment="Stretch" Background="#eee" RenderTransformOrigin="0.5,0.5">
+                	<Grid.RenderTransform>
+                		<CompositeTransform/>
+                	</Grid.RenderTransform>
+                    <StackPanel Margin="30">
+                        <TextBlock Text="Item Details" FontSize="52" HorizontalAlignment="Center" />
+                        <TextBlock Text="{Binding Title}" FontSize="42" Margin="0,30,0,0" />
+                        <TextBlock Text="Details" FontSize="26" Margin="0,60,0,10" />
+                        <TextBox Text="{Binding Description, Mode=TwoWay}" AcceptsReturn="True" TextWrapping="Wrap" Height="200" />
+                    </StackPanel>
+                    <Button x:Name="DeleteButton" Content="  Delete Item" Padding="15" FontSize="24" FontFamily="Segoe UI Symbol" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="30" Click="DeleteButton_Click" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

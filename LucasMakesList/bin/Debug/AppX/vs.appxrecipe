@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>MCFLY-O-MATIC</Machine>
+    <WindowsUser>LDT</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>f49fca06-4143-46c5-8eac-60e999cc7528</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>0C13FD9C56242B6BE060A63A40E458D7EA9EA69C6511BF527D0CBE867E3CCC78</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>f49fca06-4143-46c5-8eac-60e999cc7528_1.0.0.7_neutral__jp7kgnqwcp49e</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>f49fca06-4143-46c5-8eac-60e999cc7528_jp7kgnqwcp49e!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>f49fca06-4143-46c5-8eac-60e999cc7528</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=LDT</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.7</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-03T05:01:18.384</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\LucasMakesList.exe">
+      <PackagePath>LucasMakesList.exe</PackagePath>
+      <Modified>2015-05-03T17:53:20.979</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T10:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T10:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T10:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-07-23T10:01:02.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-05-03T05:00:50.350</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-05-03T04:52:27.494</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\NewItemDialog.xbf">
+      <PackagePath>NewItemDialog.xbf</PackagePath>
+      <Modified>2015-05-03T05:00:50.387</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\SubPage.xbf">
+      <PackagePath>SubPage.xbf</PackagePath>
+      <Modified>2015-05-03T17:53:20.632</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\LucasMakesList.xr.xml">
+      <PackagePath>LucasMakesList.xr.xml</PackagePath>
+      <Modified>2015-05-03T05:00:50.311</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\LDT\Documents\Visual Studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-05-03T05:01:18.183</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

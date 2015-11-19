@@ -1,0 +1,13 @@
+[Files]
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\AppxManifest.xml" "AppxManifest.xml"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\LucasMakesList.exe" "LucasMakesList.exe"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\Assets\Logo.scale-100.png" "Assets\Logo.scale-100.png"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\Assets\SmallLogo.scale-100.png" "Assets\SmallLogo.scale-100.png"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\Assets\SplashScreen.scale-100.png" "Assets\SplashScreen.scale-100.png"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\Assets\StoreLogo.scale-100.png" "Assets\StoreLogo.scale-100.png"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\App.xbf" "App.xbf"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\MainPage.xbf" "MainPage.xbf"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\NewItemDialog.xbf" "NewItemDialog.xbf"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\SubPage.xbf" "SubPage.xbf"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\LucasMakesList.xr.xml" "LucasMakesList.xr.xml"
+"C:\Users\LDT\documents\visual studio 2013\Projects\LucasMakesList\LucasMakesList\bin\Debug\resources.pri" "resources.pri"
